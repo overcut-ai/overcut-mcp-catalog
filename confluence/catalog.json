@@ -1,0 +1,46 @@
+{
+  "name": "Confluence",
+  "description": "Search, read, and manage Confluence pages, spaces, and comments. Access your team's documentation and knowledge base.",
+  "category": "productivity",
+  "tags": ["documentation", "wiki", "knowledge-base", "atlassian", "collaboration"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/confluence/icon.svg",
+  "websiteUrl": "https://github.com/aashari/mcp-server-atlassian-confluence",
+  "priority": 18,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "@aashari/mcp-server-atlassian-confluence"],
+    "env": {
+      "ATLASSIAN_SITE_URL": "${ATLASSIAN_SITE_URL}",
+      "ATLASSIAN_USER_EMAIL": "${ATLASSIAN_USER_EMAIL}",
+      "ATLASSIAN_API_TOKEN": "${ATLASSIAN_API_TOKEN}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "ATLASSIAN_SITE_URL",
+      "displayName": "Atlassian Site URL",
+      "description": "Your Confluence Cloud URL (e.g., https://your-company.atlassian.net)."
+    },
+    {
+      "envVar": "ATLASSIAN_USER_EMAIL",
+      "displayName": "Atlassian User Email",
+      "description": "The email address associated with your Atlassian account."
+    },
+    {
+      "envVar": "ATLASSIAN_API_TOKEN",
+      "displayName": "Atlassian API Token",
+      "description": "Create an API token from your Atlassian account settings.",
+      "helpUrl": "https://id.atlassian.com/manage-profile/security/api-tokens"
+    }
+  ],
+  "recommendedTools": [
+    "conf_get"
+  ],
+  "allTools": [
+    "conf_get",
+    "conf_post",
+    "conf_put",
+    "conf_patch",
+    "conf_delete"
+  ]
+}

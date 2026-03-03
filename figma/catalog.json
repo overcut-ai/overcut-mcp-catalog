@@ -1,0 +1,35 @@
+{
+  "name": "Figma",
+  "description": "Access Figma designs, extract layout and styling context, capture screenshots, and map design components to code.",
+  "category": "developer-tools",
+  "tags": ["design", "ui", "frontend", "design-to-code", "figma"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/figma/icon.svg",
+  "websiteUrl": "https://developers.figma.com/docs/figma-mcp-server/",
+  "priority": 8,
+  "serverConfig": {
+    "url": "https://mcp.figma.com/mcp"
+  },
+  "requiredSecrets": [],
+  "recommendedTools": [
+    "get_design_context",
+    "get_screenshot",
+    "get_variable_defs",
+    "get_code_connect_map",
+    "get_metadata"
+  ],
+  "allTools": [
+    "get_design_context",
+    "get_screenshot",
+    "get_variable_defs",
+    "get_metadata",
+    "get_code_connect_map",
+    "add_code_connect_map",
+    "get_code_connect_suggestions",
+    "send_code_connect_mappings",
+    "create_design_system_rules",
+    "generate_figma_design",
+    "get_figjam",
+    "generate_diagram",
+    "whoami"
+  ]
+}

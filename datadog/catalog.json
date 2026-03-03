@@ -1,0 +1,67 @@
+{
+  "name": "Datadog",
+  "description": "Query logs, monitor alerts, view dashboards, and investigate incidents from Datadog.",
+  "category": "monitoring",
+  "tags": ["observability", "logs", "metrics", "alerts", "apm", "incidents"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/datadog/icon.svg",
+  "websiteUrl": "https://github.com/winor30/mcp-server-datadog",
+  "priority": 11,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "@winor30/mcp-server-datadog"],
+    "env": {
+      "DATADOG_API_KEY": "${DATADOG_API_KEY}",
+      "DATADOG_APP_KEY": "${DATADOG_APP_KEY}",
+      "DATADOG_SITE": "${DATADOG_SITE}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "DATADOG_API_KEY",
+      "displayName": "Datadog API Key",
+      "description": "Found in Datadog under Organization Settings > API Keys.",
+      "helpUrl": "https://docs.datadoghq.com/account_management/api-app-keys/#api-keys"
+    },
+    {
+      "envVar": "DATADOG_APP_KEY",
+      "displayName": "Datadog Application Key",
+      "description": "Found in Datadog under Organization Settings > Application Keys.",
+      "helpUrl": "https://docs.datadoghq.com/account_management/api-app-keys/#application-keys"
+    },
+    {
+      "envVar": "DATADOG_SITE",
+      "displayName": "Datadog Site",
+      "description": "Your Datadog site domain (e.g., datadoghq.com, datadoghq.eu, us5.datadoghq.com).",
+      "helpUrl": "https://docs.datadoghq.com/getting_started/site/"
+    }
+  ],
+  "recommendedTools": [
+    "get_monitors",
+    "get_logs",
+    "list_incidents",
+    "list_dashboards",
+    "query_metrics"
+  ],
+  "allTools": [
+    "list_incidents",
+    "get_incident",
+    "get_monitors",
+    "get_logs",
+    "list_dashboards",
+    "get_dashboard",
+    "query_metrics",
+    "list_traces",
+    "list_hosts",
+    "get_active_hosts_count",
+    "mute_host",
+    "unmute_host",
+    "list_downtimes",
+    "schedule_downtime",
+    "cancel_downtime",
+    "get_rum_applications",
+    "get_rum_events",
+    "get_rum_grouped_event_count",
+    "get_rum_page_performance",
+    "get_rum_page_waterfall"
+  ]
+}

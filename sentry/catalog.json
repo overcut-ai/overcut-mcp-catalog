@@ -1,0 +1,41 @@
+{
+  "name": "Sentry",
+  "description": "Search errors, investigate issues, and access Seer AI root-cause analysis from Sentry.",
+  "category": "monitoring",
+  "tags": ["errors", "debugging", "observability", "crash-reporting"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/sentry/icon.svg",
+  "websiteUrl": "https://github.com/getsentry/sentry-mcp",
+  "priority": 10,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "@sentry/mcp-server@latest"],
+    "env": {
+      "SENTRY_ACCESS_TOKEN": "${SENTRY_ACCESS_TOKEN}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "SENTRY_ACCESS_TOKEN",
+      "displayName": "Sentry Access Token",
+      "description": "Create an Internal Integration token at Settings > Custom Integrations with org:read, project:read, event:read scopes.",
+      "helpUrl": "https://docs.sentry.io/api/guides/create-auth-token/"
+    }
+  ],
+  "recommendedTools": [
+    "search_errors",
+    "get_issue",
+    "list_projects",
+    "list_organizations"
+  ],
+  "allTools": [
+    "search_errors",
+    "search_issues",
+    "get_issue",
+    "list_projects",
+    "list_organizations",
+    "get_event",
+    "list_releases",
+    "create_project",
+    "update_issue"
+  ]
+}

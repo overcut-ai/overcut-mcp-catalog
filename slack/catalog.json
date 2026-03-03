@@ -1,0 +1,47 @@
+{
+  "name": "Slack",
+  "description": "Send messages, read channels, and interact with your Slack workspace.",
+  "category": "communication",
+  "tags": ["messaging", "chat", "notifications", "team-communication"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/slack/icon.svg",
+  "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+  "priority": 20,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-slack"],
+    "env": {
+      "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
+      "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "SLACK_BOT_TOKEN",
+      "displayName": "Slack Bot Token",
+      "description": "A bot token (xoxb-...) from your Slack app with channels:read, channels:history, chat:write, and users:read scopes.",
+      "helpUrl": "https://api.slack.com/tutorials/tracks/getting-a-token"
+    },
+    {
+      "envVar": "SLACK_TEAM_ID",
+      "displayName": "Slack Team ID",
+      "description": "Your Slack workspace ID. Find it in your workspace URL or Slack admin settings."
+    }
+  ],
+  "recommendedTools": [
+    "slack_list_channels",
+    "slack_post_message",
+    "slack_get_channel_history",
+    "slack_search_messages"
+  ],
+  "allTools": [
+    "slack_list_channels",
+    "slack_post_message",
+    "slack_reply_to_thread",
+    "slack_get_channel_history",
+    "slack_get_thread_replies",
+    "slack_search_messages",
+    "slack_get_users",
+    "slack_get_user_profile",
+    "slack_add_reaction"
+  ]
+}

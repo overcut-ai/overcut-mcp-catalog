@@ -1,0 +1,55 @@
+{
+  "name": "Notion",
+  "description": "Search, read, and edit Notion pages, databases, and blocks. Access your team's knowledge base directly.",
+  "category": "productivity",
+  "tags": ["knowledge-base", "wiki", "documents", "databases", "notes"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/notion/icon.svg",
+  "websiteUrl": "https://github.com/makenotion/notion-mcp-server",
+  "priority": 12,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "@notionhq/notion-mcp-server"],
+    "env": {
+      "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer ${NOTION_API_KEY}\", \"Notion-Version\": \"2022-06-28\"}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "NOTION_API_KEY",
+      "displayName": "Notion API Key",
+      "description": "Create an internal integration at notion.so/my-integrations with the content capabilities you need, then share relevant pages with the integration.",
+      "helpUrl": "https://developers.notion.com/docs/create-a-notion-integration"
+    }
+  ],
+  "recommendedTools": [
+    "search-content",
+    "retrieve-a-page",
+    "get-page-content",
+    "query-data-source",
+    "get-all-databases"
+  ],
+  "allTools": [
+    "search-content",
+    "retrieve-a-page",
+    "get-page-content",
+    "create-a-page",
+    "update-a-page",
+    "append-a-block",
+    "update-a-block",
+    "delete-a-block",
+    "retrieve-a-block",
+    "retrieve-a-database",
+    "query-data-source",
+    "retrieve-a-data-source",
+    "update-a-data-source",
+    "create-a-data-source",
+    "list-data-source-templates",
+    "create-a-database-row",
+    "update-database-row",
+    "retrieve-database-row",
+    "get-all-databases",
+    "move-page",
+    "add-comment",
+    "list-comments"
+  ]
+}

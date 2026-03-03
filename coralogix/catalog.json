@@ -1,0 +1,49 @@
+{
+  "name": "Coralogix",
+  "description": "Search and analyze logs, detect patterns, and run DataPrime queries against your Coralogix observability data.",
+  "category": "monitoring",
+  "tags": ["observability", "logs", "debugging", "dataprime", "log-analysis"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/coralogix/icon.svg",
+  "websiteUrl": "https://github.com/dorhaimovich/coralogix-mcp-server",
+  "priority": 15,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "coralogix-mcp-server"],
+    "env": {
+      "CORALOGIX_API_KEY": "${CORALOGIX_API_KEY}",
+      "CORALOGIX_DOMAIN": "${CORALOGIX_DOMAIN}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "CORALOGIX_API_KEY",
+      "displayName": "Coralogix API Key",
+      "description": "An API key with Data Querying permissions from your Coralogix dashboard.",
+      "helpUrl": "https://coralogix.com/docs/api-keys/"
+    },
+    {
+      "envVar": "CORALOGIX_DOMAIN",
+      "displayName": "Coralogix Domain",
+      "description": "Your regional domain (e.g., coralogix.us, coralogix.com, eu2.coralogix.com).",
+      "helpUrl": "https://coralogix.com/docs/domain/"
+    }
+  ],
+  "recommendedTools": [
+    "search_logs",
+    "query_logs_dataprime",
+    "list_applications",
+    "get_log_context"
+  ],
+  "allTools": [
+    "search_logs",
+    "query_logs_dataprime",
+    "get_log_aggregations",
+    "advanced_dataprime_query",
+    "list_applications",
+    "list_subsystems",
+    "get_log_context",
+    "log_pattern_analysis",
+    "security_analysis",
+    "custom_dataprime_query"
+  ]
+}
