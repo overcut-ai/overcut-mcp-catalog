@@ -1,0 +1,60 @@
+{
+  "name": "Elasticsearch",
+  "description": "Search documents, manage indices, analyze clusters, and query your Elasticsearch or OpenSearch data.",
+  "category": "data",
+  "tags": ["search", "analytics", "logs", "indexing", "opensearch"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/elasticsearch/icon.svg",
+  "websiteUrl": "https://github.com/cr7258/elasticsearch-mcp-server",
+  "priority": 15,
+  "serverConfig": {
+    "command": "uvx",
+    "args": ["elasticsearch-mcp-server"],
+    "env": {
+      "ELASTICSEARCH_HOSTS": "${ELASTICSEARCH_HOSTS}",
+      "ELASTICSEARCH_API_KEY": "${ELASTICSEARCH_API_KEY}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "ELASTICSEARCH_HOSTS",
+      "displayName": "Elasticsearch Host URL",
+      "description": "The URL of your Elasticsearch cluster (e.g., https://localhost:9200).",
+      "helpUrl": "https://github.com/cr7258/elasticsearch-mcp-server#configure-environment-variables"
+    },
+    {
+      "envVar": "ELASTICSEARCH_API_KEY",
+      "displayName": "Elasticsearch API Key",
+      "description": "API key for authentication. Create in Kibana under Stack Management > API Keys.",
+      "helpUrl": "https://www.elastic.co/docs/deploy-manage/api-keys/elasticsearch-api-keys"
+    }
+  ],
+  "recommendedTools": [
+    "search_documents",
+    "list_indices",
+    "get_index",
+    "get_cluster_health",
+    "get_document"
+  ],
+  "allTools": [
+    "search_documents",
+    "list_indices",
+    "get_index",
+    "create_index",
+    "delete_index",
+    "get_document",
+    "index_document",
+    "delete_document",
+    "delete_by_query",
+    "get_cluster_health",
+    "get_cluster_stats",
+    "list_aliases",
+    "get_alias",
+    "put_alias",
+    "delete_alias",
+    "create_data_stream",
+    "get_data_stream",
+    "delete_data_stream",
+    "analyze_text",
+    "general_api_request"
+  ]
+}

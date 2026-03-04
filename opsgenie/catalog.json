@@ -1,0 +1,40 @@
+{
+  "name": "Opsgenie",
+  "description": "Manage alerts, acknowledge incidents, and interact with your Opsgenie alert management system.",
+  "category": "incident-management",
+  "tags": ["incident-management", "alerts", "on-call", "atlassian"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/opsgenie/icon.svg",
+  "websiteUrl": "https://github.com/burakdirin/opsgenie-mcp-server",
+  "priority": 16,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "opsgenie-mcp-server"],
+    "env": {
+      "OPSGENIE_API_KEY": "${OPSGENIE_API_KEY}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "OPSGENIE_API_KEY",
+      "displayName": "Opsgenie API Key",
+      "description": "An API key from Opsgenie. Create at Settings > API Key Management.",
+      "helpUrl": "https://support.atlassian.com/opsgenie/docs/api-key-management/"
+    }
+  ],
+  "recommendedTools": [
+    "opsgenie_list_alerts",
+    "opsgenie_acknowledge_alert",
+    "opsgenie_close_alert",
+    "opsgenie_create_alert"
+  ],
+  "allTools": [
+    "opsgenie_list_alerts",
+    "opsgenie_create_alert",
+    "opsgenie_acknowledge_alert",
+    "opsgenie_close_alert",
+    "opsgenie_list_alert_notes",
+    "opsgenie_add_note",
+    "opsgenie_list_alert_logs",
+    "opsgenie_add_details"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "LaunchDarkly",
+  "description": "Manage feature flags, environments, and AI configs from LaunchDarkly.",
+  "category": "developer-tools",
+  "tags": ["feature-flags", "feature-management", "experimentation", "toggles"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/launchdarkly/icon.svg",
+  "websiteUrl": "https://github.com/launchdarkly/mcp-server",
+  "priority": 18,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "--package", "@launchdarkly/mcp-server", "--", "mcp", "start", "--api-key", "${LAUNCHDARKLY_ACCESS_TOKEN}"],
+    "env": {}
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "LAUNCHDARKLY_ACCESS_TOKEN",
+      "displayName": "LaunchDarkly Access Token",
+      "description": "API access token from LaunchDarkly. Found at Settings > Authorization. Format: api-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.",
+      "helpUrl": "https://docs.launchdarkly.com/home/account/api"
+    }
+  ],
+  "recommendedTools": [
+    "featureFlagsList",
+    "featureFlagsGet",
+    "featureFlagsCreate",
+    "featureFlagsPatch",
+    "featureFlagsGetStatus",
+    "environmentsListByProject"
+  ],
+  "allTools": [
+    "featureFlagsList",
+    "featureFlagsCreate",
+    "featureFlagsGet",
+    "featureFlagsPatch",
+    "featureFlagsDelete",
+    "featureFlagsGetStatus",
+    "environmentsListByProject",
+    "codeReferencesListRepositories",
+    "aiConfigsList",
+    "aiConfigsCreate",
+    "aiConfigsGet",
+    "aiConfigsUpdate",
+    "aiConfigsDelete",
+    "aiConfigsGetTargeting",
+    "aiConfigsUpdateTargeting",
+    "aiConfigsCreateVariation",
+    "aiConfigsDeleteVariation",
+    "aiConfigsGetVariation",
+    "aiConfigsUpdateVariation"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "PagerDuty",
+  "description": "Manage incidents, on-call schedules, services, and escalation policies from PagerDuty.",
+  "category": "incident-management",
+  "tags": ["incidents", "on-call", "alerting", "escalation", "observability"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/pagerduty/icon.svg",
+  "websiteUrl": "https://github.com/PagerDuty/pagerduty-mcp-server",
+  "priority": 12,
+  "serverConfig": {
+    "command": "uvx",
+    "args": ["pagerduty-mcp"],
+    "env": {
+      "PAGERDUTY_USER_API_KEY": "${PAGERDUTY_USER_API_KEY}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "PAGERDUTY_USER_API_KEY",
+      "displayName": "PagerDuty User API Token",
+      "description": "Create at My Profile > User Settings > API Access > Create API User Token.",
+      "helpUrl": "https://support.pagerduty.com/main/docs/api-access-keys#generate-a-user-token-rest-api-key"
+    }
+  ],
+  "recommendedTools": [
+    "list_incidents",
+    "get_incident",
+    "manage_incidents",
+    "list_services",
+    "list_oncalls",
+    "list_schedules"
+  ],
+  "allTools": [
+    "list_incidents",
+    "get_incident",
+    "create_incident",
+    "manage_incidents",
+    "add_note_to_incident",
+    "add_responders",
+    "get_alert_from_incident",
+    "list_alerts_from_incident",
+    "list_incident_notes",
+    "get_outlier_incident",
+    "get_past_incidents",
+    "get_related_incidents",
+    "list_services",
+    "get_service",
+    "create_service",
+    "update_service",
+    "list_oncalls",
+    "list_schedules",
+    "get_schedule",
+    "create_schedule",
+    "update_schedule",
+    "create_schedule_override",
+    "list_schedule_users",
+    "list_escalation_policies",
+    "get_escalation_policy",
+    "list_teams",
+    "get_team",
+    "create_team",
+    "update_team",
+    "delete_team",
+    "add_team_member",
+    "remove_team_member",
+    "list_team_members",
+    "list_users",
+    "get_user_data",
+    "list_incident_workflows",
+    "get_incident_workflow",
+    "start_incident_workflow",
+    "list_event_orchestrations",
+    "get_event_orchestration",
+    "list_log_entries",
+    "get_log_entry",
+    "list_status_pages",
+    "get_status_page_post",
+    "create_status_page_post",
+    "create_status_page_post_update"
+  ]
+}

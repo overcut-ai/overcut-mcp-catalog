@@ -1,0 +1,91 @@
+{
+  "name": "Grafana",
+  "description": "Query dashboards, Prometheus metrics, Loki logs, manage alerts, incidents, and on-call schedules from Grafana.",
+  "category": "monitoring",
+  "tags": ["observability", "dashboards", "metrics", "logs", "alerts", "prometheus", "loki"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/grafana/icon.svg",
+  "websiteUrl": "https://github.com/grafana/mcp-grafana",
+  "priority": 10,
+  "serverConfig": {
+    "command": "uvx",
+    "args": ["mcp-grafana"],
+    "env": {
+      "GRAFANA_URL": "${GRAFANA_URL}",
+      "GRAFANA_SERVICE_ACCOUNT_TOKEN": "${GRAFANA_SERVICE_ACCOUNT_TOKEN}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "GRAFANA_URL",
+      "displayName": "Grafana URL",
+      "description": "Your Grafana instance URL (e.g., https://your-org.grafana.net)."
+    },
+    {
+      "envVar": "GRAFANA_SERVICE_ACCOUNT_TOKEN",
+      "displayName": "Grafana Service Account Token",
+      "description": "A service account token with appropriate permissions. Create at Administration > Service Accounts.",
+      "helpUrl": "https://grafana.com/docs/grafana/latest/administration/service-accounts/"
+    }
+  ],
+  "recommendedTools": [
+    "search_dashboards",
+    "query_prometheus",
+    "query_loki_logs",
+    "list_alert_rules",
+    "list_incidents",
+    "list_oncall_schedules"
+  ],
+  "allTools": [
+    "search_dashboards",
+    "get_dashboard_by_uid",
+    "get_dashboard_summary",
+    "get_dashboard_property",
+    "update_dashboard",
+    "get_dashboard_panel_queries",
+    "search_folders",
+    "create_folder",
+    "list_datasources",
+    "get_datasource_by_name",
+    "get_datasource_by_uid",
+    "query_prometheus",
+    "list_prometheus_metric_metadata",
+    "list_prometheus_metric_names",
+    "list_prometheus_label_names",
+    "list_prometheus_label_values",
+    "query_loki_logs",
+    "list_loki_label_names",
+    "list_loki_label_values",
+    "query_loki_stats",
+    "list_alert_rules",
+    "get_alert_rule_by_uid",
+    "create_alert_rule",
+    "update_alert_rule",
+    "delete_alert_rule",
+    "list_contact_points",
+    "list_incidents",
+    "create_incident",
+    "get_incident",
+    "add_activity_to_incident",
+    "list_oncall_schedules",
+    "get_oncall_shift",
+    "get_current_oncall_users",
+    "list_oncall_teams",
+    "list_oncall_users",
+    "list_alert_groups",
+    "get_alert_group",
+    "list_sift_investigations",
+    "get_sift_investigation",
+    "get_sift_analysis",
+    "find_error_pattern_logs",
+    "find_slow_requests",
+    "list_pyroscope_label_names",
+    "list_pyroscope_label_values",
+    "list_pyroscope_profile_types",
+    "fetch_pyroscope_profile",
+    "get_annotations",
+    "create_annotation",
+    "update_annotation",
+    "patch_annotation",
+    "generate_deeplink"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "name": "Figma",
   "description": "Access Figma designs, extract layout and styling context, capture screenshots, and map design components to code.",
-  "category": "developer-tools",
+  "category": "design",
   "tags": ["design", "ui", "frontend", "design-to-code", "figma"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/figma/icon.svg",
   "websiteUrl": "https://developers.figma.com/docs/figma-mcp-server/",

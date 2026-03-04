@@ -1,0 +1,83 @@
+{
+  "name": "ServiceNow",
+  "description": "Manage incidents, service catalog, change requests, knowledge bases, and workflows in ServiceNow.",
+  "category": "productivity",
+  "tags": ["itsm", "incidents", "service-catalog", "change-management", "knowledge-base"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/servicenow/icon.svg",
+  "websiteUrl": "https://github.com/echelon-ai-labs/servicenow-mcp",
+  "priority": 16,
+  "serverConfig": {
+    "command": "uvx",
+    "args": ["servicenow-mcp"],
+    "env": {
+      "SERVICENOW_INSTANCE_URL": "${SERVICENOW_INSTANCE_URL}",
+      "SERVICENOW_USERNAME": "${SERVICENOW_USERNAME}",
+      "SERVICENOW_PASSWORD": "${SERVICENOW_PASSWORD}",
+      "SERVICENOW_AUTH_TYPE": "basic"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "SERVICENOW_INSTANCE_URL",
+      "displayName": "ServiceNow Instance URL",
+      "description": "Your ServiceNow instance URL (e.g., https://your-instance.service-now.com)."
+    },
+    {
+      "envVar": "SERVICENOW_USERNAME",
+      "displayName": "ServiceNow Username",
+      "description": "Username for authenticating with your ServiceNow instance."
+    },
+    {
+      "envVar": "SERVICENOW_PASSWORD",
+      "displayName": "ServiceNow Password",
+      "description": "Password for authenticating with your ServiceNow instance."
+    }
+  ],
+  "recommendedTools": [
+    "list_incidents",
+    "create_incident",
+    "list_change_requests",
+    "list_catalog_items",
+    "list_articles"
+  ],
+  "allTools": [
+    "create_incident",
+    "update_incident",
+    "add_comment",
+    "resolve_incident",
+    "list_incidents",
+    "get_incident_by_number",
+    "list_catalogs",
+    "list_catalog_items",
+    "get_catalog_item",
+    "create_catalog_item",
+    "update_catalog_item",
+    "list_catalog_categories",
+    "create_change_request",
+    "update_change_request",
+    "list_change_requests",
+    "get_change_request_details",
+    "add_change_task",
+    "submit_change_for_approval",
+    "approve_change",
+    "reject_change",
+    "list_workflows",
+    "get_workflow_details",
+    "create_workflow",
+    "update_workflow",
+    "create_knowledge_base",
+    "list_knowledge_bases",
+    "create_article",
+    "update_article",
+    "publish_article",
+    "list_articles",
+    "get_article",
+    "create_user",
+    "update_user",
+    "get_user",
+    "list_users",
+    "create_group",
+    "list_groups",
+    "list_syslog_entries"
+  ]
+}

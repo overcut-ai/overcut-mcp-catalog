@@ -1,0 +1,51 @@
+{
+  "name": "Amazon CloudWatch",
+  "description": "Monitor AWS alarms, analyze logs with CloudWatch Logs Insights, and query metric data from Amazon CloudWatch.",
+  "category": "monitoring",
+  "tags": ["aws", "cloud", "logs", "metrics", "alarms", "observability"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/cloudwatch/icon.svg",
+  "websiteUrl": "https://github.com/awslabs/mcp/tree/main/src/cloudwatch-mcp-server",
+  "priority": 14,
+  "serverConfig": {
+    "command": "uvx",
+    "args": ["awslabs.cloudwatch-mcp-server@latest"],
+    "env": {
+      "AWS_PROFILE": "${AWS_PROFILE}",
+      "AWS_REGION": "${AWS_REGION}",
+      "FASTMCP_LOG_LEVEL": "ERROR"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "AWS_PROFILE",
+      "displayName": "AWS Profile",
+      "description": "The AWS CLI profile name configured via `aws configure`.",
+      "helpUrl": "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html"
+    },
+    {
+      "envVar": "AWS_REGION",
+      "displayName": "AWS Region",
+      "description": "The AWS region for CloudWatch (e.g., us-east-1)."
+    }
+  ],
+  "recommendedTools": [
+    "get_active_alarms",
+    "analyze_log_group",
+    "get_metric_data",
+    "execute_log_insights_query",
+    "get_alarm_history"
+  ],
+  "allTools": [
+    "get_active_alarms",
+    "get_alarm_history",
+    "get_metric_data",
+    "get_metric_metadata",
+    "analyze_metric",
+    "get_recommended_metric_alarms",
+    "describe_log_groups",
+    "analyze_log_group",
+    "execute_log_insights_query",
+    "get_logs_insight_query_results",
+    "cancel_logs_insight_query"
+  ]
+}

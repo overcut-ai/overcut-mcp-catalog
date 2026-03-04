@@ -1,0 +1,59 @@
+{
+  "name": "New Relic",
+  "description": "Run NRQL queries, monitor APM applications, search entities, and manage alerts and incidents from New Relic.",
+  "category": "monitoring",
+  "tags": ["apm", "observability", "metrics", "alerts", "incidents", "nrql"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/new-relic/icon.svg",
+  "websiteUrl": "https://github.com/cloudbring/newrelic-mcp",
+  "priority": 13,
+  "serverConfig": {
+    "command": "npx",
+    "args": ["-y", "newrelic-mcp"],
+    "env": {
+      "NEW_RELIC_API_KEY": "${NEW_RELIC_API_KEY}",
+      "NEW_RELIC_ACCOUNT_ID": "${NEW_RELIC_ACCOUNT_ID}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "NEW_RELIC_API_KEY",
+      "displayName": "New Relic API Key",
+      "description": "A User API key (starts with NRAK-). Create at one.newrelic.com > API Keys.",
+      "helpUrl": "https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/"
+    },
+    {
+      "envVar": "NEW_RELIC_ACCOUNT_ID",
+      "displayName": "New Relic Account ID",
+      "description": "Your New Relic Account ID. Found in the URL or under Administration > Access Management > Accounts."
+    }
+  ],
+  "recommendedTools": [
+    "run_nrql_query",
+    "list_apm_applications",
+    "search_entities",
+    "list_open_incidents",
+    "list_alert_policies"
+  ],
+  "allTools": [
+    "run_nrql_query",
+    "run_nerdgraph_query",
+    "list_apm_applications",
+    "search_entities",
+    "get_entity_details",
+    "list_alert_policies",
+    "list_open_incidents",
+    "acknowledge_incident",
+    "list_synthetics_monitors",
+    "create_browser_monitor",
+    "get_account_details",
+    "create_deployment",
+    "list_deployments_rest",
+    "delete_deployment",
+    "list_apm_applications_rest",
+    "list_metric_names_for_host",
+    "get_metric_data_for_host",
+    "list_application_hosts",
+    "list_alert_policies_rest",
+    "list_open_incidents_rest"
+  ]
+}
