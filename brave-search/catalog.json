@@ -1,14 +1,14 @@
 {
   "name": "Brave Search",
-  "description": "Search the web using Brave Search API with both web and local search capabilities.",
+  "description": "Search the web, images, videos, and news using the Brave Search API with AI-powered summaries.",
   "category": "data",
   "tags": ["search", "web", "browse", "research"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/brave-search/icon.svg",
-  "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search",
+  "websiteUrl": "https://github.com/brave/brave-search-mcp-server",
   "priority": 30,
   "serverConfig": {
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+    "args": ["-y", "@brave/brave-search-mcp-server"],
     "env": {
       "BRAVE_API_KEY": "${BRAVE_API_KEY}"
     }
@@ -23,10 +23,15 @@
   ],
   "recommendedTools": [
     "brave_web_search",
-    "brave_local_search"
+    "brave_local_search",
+    "brave_news_search"
   ],
   "allTools": [
     "brave_web_search",
-    "brave_local_search"
+    "brave_local_search",
+    "brave_image_search",
+    "brave_video_search",
+    "brave_news_search",
+    "brave_summarizer"
   ]
 }

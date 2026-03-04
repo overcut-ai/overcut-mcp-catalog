@@ -1,14 +1,14 @@
 {
   "name": "Coralogix",
-  "description": "Search and analyze logs, detect patterns, and run DataPrime queries against your Coralogix observability data.",
+  "description": "Query logs, traces, and Prometheus metrics, and manage alert definitions from your Coralogix observability platform.",
   "category": "monitoring",
-  "tags": ["observability", "logs", "debugging", "dataprime", "log-analysis"],
+  "tags": ["observability", "logs", "metrics", "traces", "dataprime", "alerts"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/coralogix/icon.svg",
-  "websiteUrl": "https://github.com/dorhaimovich/coralogix-mcp-server",
+  "websiteUrl": "https://coralogix.com/docs/user-guides/mcp-server/overview/",
   "priority": 15,
   "serverConfig": {
     "command": "npx",
-    "args": ["-y", "coralogix-mcp-server"],
+    "args": ["-y", "mcp-remote", "https://api.${CORALOGIX_DOMAIN}/mgmt/api/v1/mcp", "--header", "Authorization: Bearer ${CORALOGIX_API_KEY}"],
     "env": {
       "CORALOGIX_API_KEY": "${CORALOGIX_API_KEY}",
       "CORALOGIX_DOMAIN": "${CORALOGIX_DOMAIN}"
@@ -18,32 +18,34 @@
     {
       "envVar": "CORALOGIX_API_KEY",
       "displayName": "Coralogix API Key",
-      "description": "An API key with Data Querying permissions from your Coralogix dashboard.",
-      "helpUrl": "https://coralogix.com/docs/api-keys/"
+      "description": "A personal API key with Data Querying permissions from your Coralogix dashboard.",
+      "helpUrl": "https://coralogix.com/docs/user-guides/account-management/api-keys/api-keys/"
     },
     {
       "envVar": "CORALOGIX_DOMAIN",
       "displayName": "Coralogix Domain",
-      "description": "Your regional domain (e.g., coralogix.us, coralogix.com, eu2.coralogix.com).",
-      "helpUrl": "https://coralogix.com/docs/domain/"
+      "description": "Your regional API domain (e.g., us2.coralogix.com, us1.coralogix.com, eu1.coralogix.com, eu2.coralogix.com, ap1.coralogix.com).",
+      "helpUrl": "https://coralogix.com/docs/user-guides/mcp-server/setup/"
     }
   ],
   "recommendedTools": [
-    "search_logs",
-    "query_logs_dataprime",
-    "list_applications",
-    "get_log_context"
+    "get_logs",
+    "get_traces",
+    "metrics__instant_query",
+    "list_alerts"
   ],
   "allTools": [
-    "search_logs",
-    "query_logs_dataprime",
-    "get_log_aggregations",
-    "advanced_dataprime_query",
-    "list_applications",
-    "list_subsystems",
-    "get_log_context",
-    "log_pattern_analysis",
-    "security_analysis",
-    "custom_dataprime_query"
+    "get_logs",
+    "get_traces",
+    "metrics__instant_query",
+    "metrics__range_query",
+    "metrics__labels",
+    "metrics__label_values",
+    "metrics__series",
+    "list_alerts",
+    "get_alert",
+    "create_alert",
+    "update_alert",
+    "delete_alert"
   ]
 }

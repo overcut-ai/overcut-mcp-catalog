@@ -17,25 +17,42 @@
     {
       "envVar": "SENTRY_ACCESS_TOKEN",
       "displayName": "Sentry Access Token",
-      "description": "Create an Internal Integration token at Settings > Custom Integrations with org:read, project:read, event:read scopes.",
+      "description": "Create an Internal Integration token at Settings > Custom Integrations with org:read, project:read, project:write, team:read, team:write, event:write scopes.",
       "helpUrl": "https://docs.sentry.io/api/guides/create-auth-token/"
     }
   ],
   "recommendedTools": [
-    "search_errors",
-    "get_issue",
-    "list_projects",
-    "list_organizations"
+    "search_events",
+    "get_issue_details",
+    "find_projects",
+    "find_organizations"
   ],
   "allTools": [
-    "search_errors",
+    "search_events",
     "search_issues",
-    "get_issue",
-    "list_projects",
-    "list_organizations",
-    "get_event",
-    "list_releases",
+    "search_issue_events",
+    "get_issue_details",
+    "get_issue_tag_values",
+    "find_projects",
+    "find_organizations",
+    "find_releases",
+    "find_teams",
+    "find_dsns",
+    "list_events",
+    "list_issues",
+    "list_issue_events",
     "create_project",
-    "update_issue"
+    "create_team",
+    "create_dsn",
+    "update_issue",
+    "update_project",
+    "analyze_issue_with_seer",
+    "get_event_attachment",
+    "get_trace_details",
+    "get_sentry_resource",
+    "get_doc",
+    "search_docs",
+    "use_sentry",
+    "whoami"
   ]
 }

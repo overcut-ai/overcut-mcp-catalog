@@ -8,7 +8,7 @@
   "priority": 14,
   "serverConfig": {
     "command": "uvx",
-    "args": ["--from", "git+https://github.com/livehybrid/splunk-mcp.git", "splunk-mcp", "stdio"],
+    "args": ["splunk-mcp", "stdio"],
     "env": {
       "SPLUNK_HOST": "${SPLUNK_HOST}",
       "SPLUNK_TOKEN": "${SPLUNK_TOKEN}"
@@ -24,7 +24,7 @@
       "envVar": "SPLUNK_TOKEN",
       "displayName": "Splunk Auth Token",
       "description": "A Splunk authentication token. Alternatively use SPLUNK_USERNAME and SPLUNK_PASSWORD for basic auth.",
-      "helpUrl": "https://docs.splunk.com/Documentation/Splunk/latest/Security/Setupauthenticationtokens"
+      "helpUrl": "https://docs.splunk.com/Documentation/Splunk/latest/Security/Setupauthenticationwithtokens"
     }
   ],
   "recommendedTools": [
@@ -37,14 +37,14 @@
     "search_splunk",
     "list_indexes",
     "get_index_info",
-    "indexes_and_sourcetypes",
+    "get_indexes_and_sourcetypes",
     "list_saved_searches",
     "health_check",
+    "health",
     "ping",
     "current_user",
     "list_users",
     "list_kvstore_collections",
-    "create_kvstore_collection",
-    "delete_kvstore_collection"
+    "list_tools"
   ]
 }

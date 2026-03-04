@@ -4,11 +4,11 @@
   "category": "communication",
   "tags": ["messaging", "chat", "notifications", "team-communication"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/slack/icon.svg",
-  "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+  "websiteUrl": "https://github.com/zencoderai/slack-mcp-server",
   "priority": 20,
   "serverConfig": {
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-slack"],
+    "args": ["-y", "@zencoderai/slack-mcp-server"],
     "env": {
       "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
       "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
@@ -30,8 +30,7 @@
   "recommendedTools": [
     "slack_list_channels",
     "slack_post_message",
-    "slack_get_channel_history",
-    "slack_search_messages"
+    "slack_get_channel_history"
   ],
   "allTools": [
     "slack_list_channels",
@@ -39,7 +38,6 @@
     "slack_reply_to_thread",
     "slack_get_channel_history",
     "slack_get_thread_replies",
-    "slack_search_messages",
     "slack_get_users",
     "slack_get_user_profile",
     "slack_add_reaction"
