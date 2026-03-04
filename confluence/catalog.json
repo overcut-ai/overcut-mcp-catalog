@@ -1,7 +1,7 @@
 {
   "name": "Confluence",
   "description": "Search, read, and manage Confluence pages, spaces, and comments. Access your team's documentation and knowledge base.",
-  "category": "productivity",
+  "category": "documentation",
   "tags": ["documentation", "wiki", "knowledge-base", "atlassian", "collaboration"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/confluence/icon.svg",
   "websiteUrl": "https://github.com/aashari/mcp-server-atlassian-confluence",

@@ -1,7 +1,7 @@
 {
   "name": "Notion",
   "description": "Search, read, and edit Notion pages, databases, and blocks. Access your team's knowledge base directly.",
-  "category": "productivity",
+  "category": "documentation",
   "tags": ["knowledge-base", "wiki", "documents", "databases", "notes"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/notion/icon.svg",
   "websiteUrl": "https://github.com/makenotion/notion-mcp-server",

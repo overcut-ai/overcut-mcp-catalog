@@ -1,7 +1,7 @@
 {
   "name": "ServiceNow",
   "description": "Manage incidents, service catalog, change requests, knowledge bases, and workflows in ServiceNow.",
-  "category": "productivity",
+  "category": "it-service-management",
   "tags": ["itsm", "incidents", "service-catalog", "change-management", "knowledge-base"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/servicenow/icon.svg",
   "websiteUrl": "https://github.com/echelon-ai-labs/servicenow-mcp",
