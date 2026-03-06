@@ -19,7 +19,7 @@ Create a `catalog.json` file following the schema documented in [README.md](./RE
 **Required fields:**
 - `name` - Display name
 - `description` - What the server does (1-2 sentences)
-- `category` - One of: `developer-tools`, `productivity`, `data`, `monitoring`, `communication`, `ai`, `other`
+- `category` - One of: `developer-tools`, `productivity`, `data`, `monitoring`, `communication`, `design`, `documentation`, `incident-management`, `it-service-management`, `ai`, `other`
 - `serverConfig` - Valid MCP server configuration
 
 **Optional but recommended:**
@@ -47,11 +47,19 @@ https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/my-server/
 
 ### 4. Validate
 
-Ensure your `catalog.json`:
+Run the validation script:
+
+```bash
+python3 scripts/validate-catalog.py my-server-name
+```
+
+This checks that your `catalog.json`:
 - Is valid JSON (no trailing commas)
 - Has a valid `category` value
-- Has `requiredSecrets` entries for every `${VAR}` in `serverConfig.env`
+- Has `requiredSecrets` entries for every `${VAR}` in `serverConfig`
 - Has `recommendedTools` as a subset of `allTools`
+- Has no duplicate tool names
+- Has a valid icon path (if specified)
 
 ### 5. Submit a Pull Request
 
@@ -73,6 +81,10 @@ Ensure your `catalog.json`:
 - Clear, helpful secret descriptions
 - No sensitive data or credentials
 - Working `serverConfig` (tested with `npx` or the relevant command)
+
+## For AI Agents
+
+See [AGENTS.md](./AGENTS.md) for comprehensive agent-oriented instructions, including schema details, skill references, and validation workflows.
 
 ## License
 

@@ -87,11 +87,15 @@ Each `catalog.json` follows this schema:
 
 | Value | Description |
 |-------|-------------|
-| `developer-tools` | Git, CI/CD, code analysis, IDEs |
+| `developer-tools` | Git, CI/CD, code analysis, feature flags |
 | `productivity` | Project management, task tracking |
 | `data` | Search, databases, analytics |
 | `monitoring` | Error tracking, observability, APM |
 | `communication` | Chat, email, notifications |
+| `design` | UI/UX design tools |
+| `documentation` | Knowledge bases, wikis, docs platforms |
+| `incident-management` | Incident response, alerting, on-call |
+| `it-service-management` | ITSM, ticketing, service desks |
 | `ai` | AI/ML services, LLM tools |
 | `other` | Anything that doesn't fit above |
 
@@ -111,7 +115,8 @@ We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guideline
 1. Create a directory with the server name in kebab-case
 2. Add a `catalog.json` following the schema above
 3. Optionally add an `icon.svg` (square, simple, works on dark backgrounds)
-4. Submit a pull request
+4. Validate: `python3 scripts/validate-catalog.py your-server-name`
+5. Submit a pull request
 
 ## Links
 
