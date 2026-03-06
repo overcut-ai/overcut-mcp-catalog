@@ -1,14 +1,14 @@
 {
   "name": "Figma",
-  "description": "Access Figma designs, extract layout and styling context, and download image assets for design-to-code workflows.",
+  "description": "Full access to the Figma REST API — browse files, extract components and styles, export images, manage comments, webhooks, and library analytics.",
   "category": "design",
   "tags": ["design", "ui", "frontend", "design-to-code", "figma"],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/figma/icon.svg",
-  "websiteUrl": "https://github.com/GLips/Figma-Context-MCP",
+  "websiteUrl": "https://github.com/thirdstrandstudio/mcp-figma",
   "priority": 8,
   "serverConfig": {
     "command": "npx",
-    "args": ["-y", "figma-developer-mcp", "--stdio"],
+    "args": ["-y", "@thirdstrandstudio/mcp-figma"],
     "env": {
       "FIGMA_API_KEY": "${FIGMA_API_KEY}"
     }
@@ -22,11 +22,44 @@
     }
   ],
   "recommendedTools": [
-    "get_figma_data",
-    "download_figma_images"
+    "figma_get_file",
+    "figma_get_file_nodes",
+    "figma_get_images",
+    "figma_get_file_components",
+    "figma_get_file_styles",
+    "figma_get_comments"
   ],
   "allTools": [
-    "get_figma_data",
-    "download_figma_images"
+    "figma_get_me",
+    "figma_get_file",
+    "figma_get_file_nodes",
+    "figma_get_images",
+    "figma_get_image_fills",
+    "figma_get_file_versions",
+    "figma_get_comments",
+    "figma_post_comment",
+    "figma_delete_comment",
+    "figma_get_comment_reactions",
+    "figma_post_comment_reaction",
+    "figma_delete_comment_reaction",
+    "figma_get_team_projects",
+    "figma_get_project_files",
+    "figma_get_team_components",
+    "figma_get_file_components",
+    "figma_get_component",
+    "figma_get_team_component_sets",
+    "figma_get_file_component_sets",
+    "figma_get_component_set",
+    "figma_get_team_styles",
+    "figma_get_file_styles",
+    "figma_get_style",
+    "figma_post_webhook",
+    "figma_get_webhook",
+    "figma_update_webhook",
+    "figma_delete_webhook",
+    "figma_get_team_webhooks",
+    "figma_get_library_analytics_component_usages",
+    "figma_get_library_analytics_style_usages",
+    "figma_get_library_analytics_variable_usages"
   ]
 }
