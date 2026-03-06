@@ -1,0 +1,49 @@
+{
+  "name": "LangSmith",
+  "description": "Manage prompts, trace runs, datasets, experiments, and billing usage from the LangSmith observability platform.",
+  "category": "developer-tools",
+  "tags": ["llm", "observability", "tracing", "prompts", "datasets", "experiments", "evaluation", "langchain"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/langsmith/icon.svg",
+  "websiteUrl": "https://github.com/langchain-ai/langsmith-mcp-server",
+  "priority": 10,
+  "serverConfig": {
+    "command": "uvx",
+    "args": ["langsmith-mcp-server"],
+    "env": {
+      "LANGSMITH_API_KEY": "${LANGSMITH_API_KEY}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "LANGSMITH_API_KEY",
+      "displayName": "LangSmith API Key",
+      "description": "Your LangSmith API key. Create one at Settings > API Keys in the LangSmith dashboard.",
+      "helpUrl": "https://docs.smith.langchain.com/administration/how_to_guides/organization/create_account_api_key"
+    }
+  ],
+  "recommendedTools": [
+    "list_projects",
+    "fetch_runs",
+    "list_prompts",
+    "list_datasets",
+    "list_experiments"
+  ],
+  "allTools": [
+    "list_projects",
+    "fetch_runs",
+    "paginate_runs",
+    "get_thread_history",
+    "list_prompts",
+    "get_prompt_by_name",
+    "push_prompt",
+    "list_datasets",
+    "read_dataset",
+    "create_dataset",
+    "list_examples",
+    "read_example",
+    "update_examples",
+    "list_experiments",
+    "run_experiment",
+    "get_billing_usage"
+  ]
+}
