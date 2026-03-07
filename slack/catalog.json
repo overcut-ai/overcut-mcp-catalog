@@ -19,7 +19,7 @@
       "envVar": "SLACK_BOT_TOKEN",
       "displayName": "Slack Bot Token",
       "description": "A bot token (xoxb-...) from your Slack app with channels:read, channels:history, chat:write, and users:read scopes.",
-      "helpUrl": "https://api.slack.com/tutorials/tracks/getting-a-token"
+      "helpUrl": "https://docs.slack.dev/app-management/quickstart-app-settings"
     },
     {
       "envVar": "SLACK_TEAM_ID",
