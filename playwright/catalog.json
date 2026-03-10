@@ -1,0 +1,61 @@
+{
+  "name": "Playwright",
+  "description": "Browser automation for E2E testing — navigate pages, interact with elements, take snapshots, and validate UI behavior.",
+  "category": "testing",
+  "tags": ["browser", "e2e", "testing", "automation", "ui"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/playwright/icon.svg",
+  "websiteUrl": "https://github.com/microsoft/playwright-mcp",
+  "priority": 10,
+  "serverConfig": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "@playwright/mcp@latest",
+      "--headless",
+      "--isolated",
+      "--browser", "chromium",
+      "--ignore-https-errors",
+      "--output-dir", "/tmp/playwright-output",
+      "--save-trace",
+      "--console-level", "warning",
+      "--timeout-action", "10000",
+      "--timeout-navigation", "30000"
+    ],
+    "env": {}
+  },
+  "requiredSecrets": [],
+  "recommendedTools": [
+    "browser_install",
+    "browser_navigate",
+    "browser_snapshot",
+    "browser_click",
+    "browser_type",
+    "browser_wait_for_text",
+    "browser_network_requests",
+    "browser_take_screenshot"
+  ],
+  "allTools": [
+    "browser_install",
+    "browser_navigate",
+    "browser_snapshot",
+    "browser_click",
+    "browser_type",
+    "browser_select_option",
+    "browser_hover",
+    "browser_drag",
+    "browser_press_key",
+    "browser_upload_file",
+    "browser_wait_for_text",
+    "browser_tab_list",
+    "browser_tab_new",
+    "browser_tab_select",
+    "browser_tab_close",
+    "browser_console_messages",
+    "browser_network_requests",
+    "browser_take_screenshot",
+    "browser_pdf_save",
+    "browser_handle_dialog",
+    "browser_file_download",
+    "browser_resize"
+  ]
+}
