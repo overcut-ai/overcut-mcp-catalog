@@ -1,0 +1,32 @@
+{
+  "name": "Xquik",
+  "description": "Connect to Xquik's remote MCP server for authenticated X data, monitoring, webhooks, extractions, compose, and write workflows.",
+  "category": "data",
+  "tags": ["x", "twitter", "social", "data", "automation", "monitoring"],
+  "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/xquik/icon.svg",
+  "websiteUrl": "https://docs.xquik.com/mcp/overview",
+  "priority": 45,
+  "serverConfig": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "mcp-remote@0.1.38",
+      "https://xquik.com/mcp",
+      "--header",
+      "Authorization: Bearer ${XQUIK_API_KEY}"
+    ],
+    "env": {
+      "XQUIK_API_KEY": "${XQUIK_API_KEY}"
+    }
+  },
+  "requiredSecrets": [
+    {
+      "envVar": "XQUIK_API_KEY",
+      "displayName": "Xquik API Key",
+      "description": "Create an API key from your Xquik dashboard account page.",
+      "helpUrl": "https://dashboard.xquik.com/en/account"
+    }
+  ],
+  "recommendedTools": ["explore", "xquik"],
+  "allTools": ["explore", "xquik"]
+}
