@@ -1,6 +1,6 @@
 {
-  "name": "Confluence",
-  "description": "Atlassian's official Rovo MCP server. Search and read Confluence pages and spaces (plus Jira issues) as an admin-managed Atlassian service account.",
+  "name": "Atlassian (Rovo MCP)",
+  "description": "Atlassian's official Rovo MCP server. Search and read Confluence pages and spaces, and work with Jira issues, as an admin-managed Atlassian service account.",
   "category": "documentation",
   "tags": [
     "documentation",
@@ -8,6 +8,7 @@
     "knowledge-base",
     "atlassian",
     "collaboration",
+    "jira",
     "official"
   ],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/confluence/icon.svg",
