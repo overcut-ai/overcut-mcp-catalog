@@ -1,46 +1,62 @@
 {
   "name": "Confluence",
-  "description": "Search, read, and manage Confluence pages, spaces, and comments. Access your team's documentation and knowledge base.",
+  "description": "Atlassian's official Rovo MCP server. Search and read Confluence pages and spaces (plus Jira issues) as an admin-managed Atlassian service account.",
   "category": "documentation",
-  "tags": ["documentation", "wiki", "knowledge-base", "atlassian", "collaboration"],
+  "tags": [
+    "documentation",
+    "wiki",
+    "knowledge-base",
+    "atlassian",
+    "collaboration",
+    "official"
+  ],
   "iconUrl": "https://raw.githubusercontent.com/overcut-ai/overcut-mcp-catalog/main/confluence/icon.svg",
-  "websiteUrl": "https://github.com/aashari/mcp-server-atlassian-confluence",
+  "websiteUrl": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/configuring-authentication-via-api-token/",
   "priority": 18,
   "serverConfig": {
-    "command": "npx",
-    "args": ["-y", "@aashari/mcp-server-atlassian-confluence"],
-    "env": {
-      "ATLASSIAN_SITE_NAME": "${ATLASSIAN_SITE_NAME}",
-      "ATLASSIAN_USER_EMAIL": "${ATLASSIAN_USER_EMAIL}",
-      "ATLASSIAN_API_TOKEN": "${ATLASSIAN_API_TOKEN}"
+    "url": "https://mcp.atlassian.com/v2/mcp",
+    "headers": {
+      "Authorization": "Bearer ${ATLASSIAN_SERVICE_ACCOUNT_API_KEY}"
     }
   },
   "requiredSecrets": [
     {
-      "envVar": "ATLASSIAN_SITE_NAME",
-      "displayName": "Atlassian Site Name",
-      "description": "Your Confluence Cloud site name (e.g., your-company — the first part of your-company.atlassian.net)."
-    },
-    {
-      "envVar": "ATLASSIAN_USER_EMAIL",
-      "displayName": "Atlassian User Email",
-      "description": "The email address associated with your Atlassian account."
-    },
-    {
-      "envVar": "ATLASSIAN_API_TOKEN",
-      "displayName": "Atlassian API Token",
-      "description": "Create an API token from your Atlassian account settings.",
-      "helpUrl": "https://id.atlassian.com/manage-profile/security/api-tokens"
+      "envVar": "ATLASSIAN_SERVICE_ACCOUNT_API_KEY",
+      "displayName": "Atlassian Service Account API Key",
+      "description": "An org admin must first enable Rovo > Rovo MCP server > Authentication > Allow API token authentication. Then create a service account (Directory > Service accounts) with the Confluence User role, and an API token for it with read:page:confluence, read:space:confluence, search:confluence, read:confluence:agent-interface and search:confluence:agent-interface (add write:confluence:agent-interface for page edits). Add your site's cloudId to the agent instructions.",
+      "helpUrl": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/configuring-authentication-via-api-token/"
     }
   ],
   "recommendedTools": [
-    "conf_get"
+    "getAccessibleAtlassianResources",
+    "atlassianUserInfo",
+    "getConfluenceContent",
+    "searchConfluence",
+    "search",
+    "discover",
+    "executeRead"
   ],
   "allTools": [
-    "conf_get",
-    "conf_post",
-    "conf_put",
-    "conf_patch",
-    "conf_delete"
+    "getAccessibleAtlassianResources",
+    "atlassianUserInfo",
+    "getConfluenceContent",
+    "createConfluenceContent",
+    "updateConfluenceContent",
+    "searchConfluence",
+    "getJiraIssue",
+    "searchJiraIssuesUsingJql",
+    "createJiraIssue",
+    "editJiraIssue",
+    "transitionJiraIssue",
+    "addOrEditJiraIssueComment",
+    "getLoomVideo",
+    "getGraphContext",
+    "getGraphObject",
+    "addGraphContext",
+    "discover",
+    "executeRead",
+    "executeWrite",
+    "executeDestructive",
+    "search"
   ]
 }
