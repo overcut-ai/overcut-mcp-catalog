@@ -26,7 +26,7 @@ overcut-mcp-catalog/
   sentry/
     catalog.json
     icon.svg
-  ...                       # 18 entry directories total
+  ...                       # 19 entry directories total
   scripts/
     validate-catalog.py     # Validation script
   .agents/skills/
@@ -109,6 +109,8 @@ Fix any errors before submitting.
 | `it-service-management` | ITSM, ticketing, service desks |
 | `ai` | AI/ML services, LLM tools |
 | `other` | Anything that doesn't fit above |
+
+The validator currently accepts only the 11 categories above. `playwright/` is present in the catalog with `category: "testing"`, which is not accepted by `scripts/validate-catalog.py` until the validator/categories are updated or the entry is recategorized.
 
 ## serverConfig Patterns
 
